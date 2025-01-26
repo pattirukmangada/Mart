@@ -2,24 +2,26 @@
   padding: 0px;
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
+/* Nav Bar */
 nav{
   display: grid;
   grid-template-columns: repeat(2,1fr);
   place-content: center;
   height: 70px;
-  /* border: 2px solid red; */
 }
 .logo{
   display: flex;
   justify-content:start;
-  place-items: center;
   padding-left: 50px;
 }
 .logo img,.Link img{
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+}
+.logo h1{
+  font-size: 20px;
 }
 .Link{
   display: flex;
@@ -36,48 +38,241 @@ nav{
   color: black;
   text-decoration: none;
 }
-.container-slide{
+/* End Nav Bar */
+
+/* Carousel */
+.Slider-Card{
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  gap: 50px;
   place-items: center;
-  padding-top: 100px;
-  gap: 20px;
+  padding: 0px 50px;
+  margin: 0px 70px;
+  background: #ECF6FA;
 }
-.Slide{
-  display: flex;
-  height: 80vh;
-  width: auto;
-  /* border: 2px solid red; */
+.Slider-Image{
+  width: 400px;
+  height: auto;
 }
-.Slide .left{
-  width: 450px;
-}
-.Slide .left button{
-  border: none;
-  margin-top: 10px;
-  padding: 5px 5px;
-  background: lightgrey;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.Slide .right img{
-  width: 350px;
-  height: 350px;
-}
-.Slide h1{
+.Content h2{
   font-size: 40px;
   font-weight: 800;
 }
-.Slide p{
+.Content p{
   font-size: 15px;
 }
+/* Carousel End */
+
+/* Card */
+.Card-Container{
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4,1fr);
+  margin: 60px 10px;
+}
+.Card{
+  width: 270px;
+  height: 150px;
+  text-align: center;
+  padding: 10px 10px;
+  box-shadow: gray 2px 4px 6px;
+  line-height: 2.0;
+}
+.Card-image{
+  background-color: white;
+  border-radius: 50% 50%;
+  width: fit-content;
+  justify-self: center;
+  padding: 5px 5px;
+}
+.Card-image img{
+  width: 30px;
+  height: 30px;
+}
+.Card-Title{
+  font-size: 20px;
+  font-weight: 800;
+}
+.Card-Subtitle{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Bigdiscount */
+.main-Bigdiscount{
+  background: #ECF6FA;
+}
+.main-Bigdiscount h1{
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.Bigdiscount-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  place-items: center;
+  gap: 20px;
+  width: 100%;
+  padding:0 100px 50px 100px;
+}
+.Bigdiscount-card{
+  width: 300px;
+  height: 380px;
+  line-height: 2.0;
+  padding: 5px 20px;
+  background: white;
+  border-radius: 10px;
+}
+.Bigdiscount-card h3{
+  font-size: 20px;
+}
+.Bigdiscount-card .label,.Best-Sales-Card .label,.NewArrival-Card .label,.Product-card .label{
+  visibility: hidden; /* Hide by default */
+  opacity: 0; /* Make the heart icon invisible initially */
+  justify-self: end;
+}
+
+.Bigdiscount-card:hover .label,.Best-Sales-Card:hover .label,.NewArrival-Card:hover .label,.Product-card:hover .label {
+  visibility: visible; /* Show the heart icon when hovering */
+  opacity: 1; /* Ensure the heart icon becomes fully visible */
+  transition: opacity 2s ease; /* Smooth fade-in effect */
+}
+.Discount-header{
+  display: flex;
+  justify-content: space-between;
+}
+.Discount-Tag{
+  background: black;
+  color: white;
+  height: 30px;
+  width: fit-content;
+  padding: 0px 10px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 15px;
+}
+.Bigdiscount-image{
+  display: flex;
+  place-content: center;
+}
+.Bigdiscount-card img{
+  height: 220px;
+  width: fit-content;
+}
+.Bigdicount-Rate-Add{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px;
+}
+.Bigdicount-Rate-Add p{
+  font-weight: 500;
+}
+.Bigdicount-Rate-Add button{
+  border-radius: 50% 50%;
+  width: 30px;
+  height: 30px;
+  border:1px solid gray;
+  background: white;
+  font-weight: 900;
+  font-size: 15px;
+  cursor: pointer;
+}
+.Bigdicount-Rate-Add button:hover{
+  background: black;
+  color: white;
+}
+
+/* NewArrival */
+.main-NewArrival{
+  background: wheat;
+}
+.main-NewArrival h1{
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.NewArrival-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Two columns per row */
+  place-items: center;
+  gap: 40px;
+  width: 100%;
+  padding:0 100px 50px 100px;
+}
+.NewArrival-Card:nth-child(10) {
+  grid-column: span 3; /* Makes the third card span both columns */
+  justify-self: center; /* Centers the card within the grid */
+}
+.NewArrival-Card{
+  width: 300px;
+  height: 360px;
+  line-height: 2.0;
+  padding: 5px 20px;
+  background: white;
+  border-radius: 10px;
+}
+.NewArrival-Card img{
+  height: 200px;
+  width: 240px;
+}
+.NewArrival-Card h3{
+  text-align: left;
+  font-size: 20px;
+}
+
+/* Best Sales */
+
+.main-Best-Sales{
+  background: #ECF6FA;
+}
+.main-Best-Sales h1{
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.Best-Sales-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  place-items: center;
+  gap: 40px;
+  width: 100%;
+  padding:0 100px 50px 100px;
+
+}
+.Best-Sales-Card{
+  width: 300px;
+  height: 380px;
+  line-height: 2.0;
+  padding: 5px 20px;
+  background: white;
+  border-radius: 10px;
+}
+.Best-Sales-Card h3{
+  font-size: 20px;
+}
+.product-image img{
+  height: 220px;
+  width: 250px;
+}
+.Best-Sales-Card:nth-child(7) {
+  grid-column: 1/3;
+  grid-row: 3;
+}
+.Best-Sales-Card:nth-child(8){
+  grid-column: 2/4 ;
+  grid-row: 3;
+}
+
+/* Best Sales End */
+
 /* Footer */
 .Container{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   background-color: #21529E;
-  padding: 25px;
-  line-height: 2.0;
+  gap: 10px;
+  padding: 25px 60px;
+  line-height: 1.8;
   color: white;
 }
 .Container img{
@@ -86,22 +281,34 @@ nav{
 }
 .footer-logo{
   width: 280px;
-  padding-right: 25px;
 }
 .Container a{
   text-decoration: none;
   color: white;
   cursor: pointer;
 }
-.Container p,.Container li{
+.Container p,
+.Container li{
   font-size: 14px;
+  line-height: 2.0;
+}
+.Container h2{
+  font-size: 18px;
+  font-weight: 700;
+}
+.footer-heading{
+  display: grid;
+  place-items: center;
+  width:250px;
+  margin: 0;
+  padding: 0;
+
 }
 /* Banner */
 .Card-container{
   display: grid;
   grid-template-columns: repeat(4,1fr);
   place-items: center;
-  text-align: center;
   height: 400px;
   width: 100%;
   gap: 10px;
@@ -123,4 +330,168 @@ nav{
 .Card-container p{
   font-size: 12px;
   margin-top: 5px;
+}
+.Container li{
+  list-style: none;
+}
+.Position-label{
+  justify-self: end;
+}
+/* CSS for the slider */
+.slider {
+  width: 80%; /* Adjust width as needed */
+  margin: 0 auto;
+}
+
+.slider-item {
+  position: relative;
+}
+
+.slider-item img {
+  width: 100%;
+  height: 400px; /* Adjust height for your desired slide size */
+  object-fit: cover;
+}
+
+.slider-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.slider-content h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.slider-content p {
+  font-size: 16px;
+}
+
+
+/* Shop */
+.banner{
+  width: 100%;
+  height: 200px;
+  background-image: url('./Images/table.jpg');
+  background-repeat:no-repeat;
+  background-size: 100% 500%; /* Full height without zooming */
+  background-position:center;
+  overflow: hidden;
+}
+.banner-name h2{
+  text-align: center;
+  padding: 60px 0 0 0;
+  color: white;
+  height: 200px;
+  background-color: rgba(35, 35, 28, 0.5);
+}
+.filter{
+  width: 180px;
+}
+.filter-tab{
+  background-color: rgb(30, 82, 138)!important;
+  color: white   !important;
+}
+.input{
+  width: 800px;
+}
+.filter-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 100px 50px;
+}
+.input-search{
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.Product-card{
+  width: 300px;
+  height: 380px;
+  line-height: 2.0;
+  padding: 5px 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+/* cart */
+.Cart-container{
+  background-color:#F0F7FA;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  padding: 25px 100px;
+  gap: 10px;
+  height: auto
+}
+.products-row{
+  width: 750px;
+  background-color: white;
+  border-radius: 5px;
+  display: grid;
+  row-gap: 10px;
+  place-items: center;
+}
+.product-summary{
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  width: 250px;
+  height: 229px;
+}
+.Cart-item{
+  display: grid;
+  width: 725px;
+  height: 160px;
+  background-color: white;
+  border-radius: 5px;
+}
+.Remove-Div{
+  display: flex;
+  justify-content: end;
+  margin: 5px;
+}
+.product-holder{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  place-items: center;
+}
+.Cart-item img{
+  width: 150px;
+  height: 120px;
+}
+.Desc-Div{
+  display: grid;
+  gap: 30px 0px;
+  height: 120px;
+  width: 350px;
+  justify-items: start;
+  align-content: center;
+  padding: 0px 20px;
+}
+.Desc-Div h3{
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 800;
+}
+.Desc-Div P{
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0px 10px;
+  
+}
+.Quality-Div{
+  display: flex;
+  margin-top: 75px;
+}
+.Quality-Div button{
+  width: 25px;
+  height: 25px;
+  margin: 0px 5px;
+}
+.Remove-Div button{
+  width: 25px;
+  height: 25px;
 }

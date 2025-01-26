@@ -1,6 +1,6 @@
 import React from 'react'
 import '../App.css'
-import icon from '../Images/bag-shopping-solid.svg'
+import icon from '../Images/mart white.png'
 export default function Footer() {
   return (
     <div>
@@ -9,7 +9,7 @@ export default function Footer() {
                 <h2><img src={icon}></img>Mart</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, dolorum ut vitae accusantium excepturi in quam eos suscipit atque consectetur ipsum quasi non labore praesentium distinctio officia impedit. Debitis, temporibus.</p>
             </div>
-            <div>
+            <div className='footer-heading'>
                 <h2>About Us</h2>
                 <ul>
                     <li>Careers</li>
@@ -19,7 +19,7 @@ export default function Footer() {
                     <li>Privacy Policy</li>
                 </ul>
             </div>
-            <div>
+            <div className='footer-heading'>
                 <h2>
                     Customer Care
                 </h2>
@@ -31,17 +31,16 @@ export default function Footer() {
                     <li>Returns & Refunds</li>
                 </ul>
             </div>
-            <div>
+            <div className='footer-heading' style={{width:"300px"}}>
                 <h2>
                     Contact Us
                 </h2>
                 <ul>
                     <li>
-                        <prevew>
-                            70 Washington Square
-                            South, New York, NY 10012
-                            United States
-                        </prevew>
+                            70 Washington Square South,
+                    </li>
+                    <li>
+                        New York, NY 10012 United States.
                     </li>
                     <li>
                         Email: <a href='mailto:pattirukmangada2002@gmail.com'>pattirukmangada2002@gmail.com</a>

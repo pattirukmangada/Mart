@@ -1,9 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import Furniture from '../Images/carousels Image/Furniture.png'
-import Iphone from '../Images/carousels Image/phone-08.png'
-import Earbud from '../Images/carousels Image/wireless-04.png'
-import HeadPhone from '../Images/carousels Image/wireless-01.png'
+import { SliderData } from "./products";
 import "../App.css"
 
 const Carousels = () => {
@@ -20,57 +17,25 @@ const Carousels = () => {
   };
 
   return (
-    <div className="carousel-container">
-      <Slider {...settings}>
-        <div className="Slide">
-            <div className="container-slide">
-            <div className="left">
-                <h1>50% Off For your First Shopping</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta quasi impedit amet, dolores nobis cum dignissimos quae deleniti officiis, consequatur numquam, perspiciatis at facilis beatae eos eaque natus assumenda? Laboriosam.</p>
-                <button>Visit Collection</button>
+    <div>
+      {/* Slider Section with React Slick */}
+      <section style={{background:'#ECF6FA'}}>
+        <Slider {...settings}>
+          {SliderData.map((slide) => (
+            <div key={slide.id}>
+              <div className="Slider-Card">
+              <div className="Content">
+                <h2>{slide.title}</h2>
+                <p>{slide.desc}</p>
+              </div>
+              <div className="Slider-Image">
+                <img src={slide.cover} alt={slide.title} />
+              </div>
+              </div>
             </div>
-            <div className="right">
-                <img src={Furniture} alt="Slide 1" />
-            </div>
-            </div>
-        </div>
-        <div className="Slide">
-            <div className="container-slide">
-            <div className="left">
-                <h1>50% Off For your First Shopping</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta quasi impedit amet, dolores nobis cum dignissimos quae deleniti officiis, consequatur numquam, perspiciatis at facilis beatae eos eaque natus assumenda? Laboriosam.</p>
-                <button>Visit Collection</button>
-            </div>
-            <div className="right">
-                <img src={Iphone} alt="Slide 1" />
-            </div>
-            </div>
-        </div>
-        <div className="Slide">
-            <div className="container-slide">
-            <div className="left">
-                <h1>50% Off For your First Shopping</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta quasi impedit amet, dolores nobis cum dignissimos quae deleniti officiis, consequatur numquam, perspiciatis at facilis beatae eos eaque natus assumenda? Laboriosam.</p>
-                <button>Visit Collection</button>
-            </div>
-            <div className="right">
-                <img src={Earbud} alt="Slide 1" />
-            </div>
-            </div>
-        </div>
-        <div className="Slide">
-            <div className="container-slide">
-            <div className="left">
-                <h1>50% Off For your First Shopping</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta quasi impedit amet, dolores nobis cum dignissimos quae deleniti officiis, consequatur numquam, perspiciatis at facilis beatae eos eaque natus assumenda? Laboriosam.</p>
-                <button>Visit Collection</button>
-            </div>
-            <div className="right">
-                <img src={HeadPhone} alt="Slide 1" />
-            </div>
-            </div>
-        </div>
-      </Slider>
+          ))}
+        </Slider>
+      </section>
     </div>
   );
 };
