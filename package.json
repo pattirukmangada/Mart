@@ -44,3 +44,8 @@
     "tailwindcss": "^3.4.17"
   }
 }
+"homepage": "https://your-username.github.io/my-app",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
